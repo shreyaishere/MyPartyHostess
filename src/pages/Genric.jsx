@@ -23,7 +23,10 @@ const Genric = ({ pages }) => {
       <div className="partners">
         <h3>{page.featuredHeading}</h3>
         <div className="partners-gallary">
-          {page.gallery.map((img, idx) => (
+          {/* {page.gallery.map((img, idx) => (
+            <img key={idx} src={img} alt="Partners" />
+          ))} */}
+          {page?.gallery?.map((img, idx) => (
             <img key={idx} src={img} alt="Partners" />
           ))}
         </div>
@@ -40,7 +43,16 @@ const Genric = ({ pages }) => {
           </h2>
 
           <div className="dyn-con">
-            {page.party_data1.map((item) => (
+            {/* {page.party_data1.map((item) => (
+              <div key={item._id} className="part-item">
+                <div className="featuring-imgs">
+                  <img src={item.image} alt={item.title} width={100} />
+                </div>
+                <h4>{item.title}</h4>
+                <p className="all-para">{item.description}</p>
+              </div>
+            ))} */}
+            {page?.party_data1?.map((item) => (
               <div key={item._id} className="part-item">
                 <div className="featuring-imgs">
                   <img src={item.image} alt={item.title} width={100} />
@@ -49,7 +61,25 @@ const Genric = ({ pages }) => {
                 <p className="all-para">{item.description}</p>
               </div>
             ))}
-            {page.party_data2.map((item) => (
+            {/* {page.party_data2.map((item) => (
+              <div key={item._id} className="part-item">
+                <div className="featuring-imgs">
+                  <img src={item.image} alt={item.title} width={100} />
+                </div>
+                <h4>{item.title}</h4>
+                <p className="all-para">{item.description}</p>
+              </div>
+            ))} */}
+            {/* {page.party_data3.map((item) => (
+              <div key={item._id} className="part-item">
+                <div className="featuring-imgs">
+                  <img src={item.image} alt={item.title} width={100} />
+                </div>
+                <h4>{item.title}</h4>
+                <p className="all-para">{item.description}</p>
+              </div>
+            ))} */}
+            {page?.party_data2?.map((item) => (
               <div key={item._id} className="part-item">
                 <div className="featuring-imgs">
                   <img src={item.image} alt={item.title} width={100} />
@@ -58,7 +88,8 @@ const Genric = ({ pages }) => {
                 <p className="all-para">{item.description}</p>
               </div>
             ))}
-            {page.party_data3.map((item) => (
+
+            {page?.party_data3?.map((item) => (
               <div key={item._id} className="part-item">
                 <div className="featuring-imgs">
                   <img src={item.image} alt={item.title} width={100} />
@@ -86,10 +117,17 @@ const Genric = ({ pages }) => {
         <div className="category-display-inner">
           <h2 className="filter-head">Categories</h2>
           <ul>
-            {page.category.map((cat) => (
+            {/* {page.category.map((cat) => (
               <li key={cat._id}>
                 <i className={cat.icon}></i>
                 <h4>{cat.name}</h4> <p>{cat.description}</p>
+              </li>
+            ))} */}
+            {page?.category?.map((cat) => (
+              <li key={cat._id}>
+                <i className={cat.icon}></i>
+                <h4>{cat.name}</h4>
+                <p>{cat.description}</p>
               </li>
             ))}
           </ul>
